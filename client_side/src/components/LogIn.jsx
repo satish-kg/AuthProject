@@ -7,12 +7,15 @@ const LogIn = () => {
     // const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3001/login', {email, password})
         .then(res => {
-                alert("Logged-In");
+                alert("Logging-In");
                 alert(res.status);
+                console.log(res.data);
         }).catch(err => {
             console.log(err);
             alert("Error: " + err);
