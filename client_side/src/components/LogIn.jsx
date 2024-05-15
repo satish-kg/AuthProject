@@ -2,21 +2,30 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 // import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const LogIn = () => {
     // const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3001/login', {email, password})
         .then(res => {
-                alert("Logging-In");
-                alert(res.status);
-                alert(res.data);
-                console.log(res.data);
+                // alert("Logging-In");
+                // alert(res.status);
+                // alert(res.data);
+                // console.log(res.data);
+                if(res.data.Status === "Success"){
+                    if(res.data.role === "admin"){
+                        navigate('/adminDashboard');
+                    }else{
+                        navigate('/userPage');
+                    }
+                }
         }).catch(err => {
             console.log(err);
             alert("Error: " + err);
@@ -78,6 +87,7 @@ const LogIn = () => {
                         <p className="mt-2">Do not have an account? <a href="/register">Register</a></p>
                         {/* <Link to="/register" className="btn btn-defaul bg-light border w-100">Register</Link> */}
                     </form>
+                    <Link to="/" className="btn btn-default bg-light">Homepage</Link>
                 </div>
             </div>
         </div>

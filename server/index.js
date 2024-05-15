@@ -29,7 +29,7 @@
                         const token = jwt.sign({email: user.email, role: user.role},
                             'jwt-secret-key', {expiresIn: '1h'})
                             res.cookie('token', token)
-                            return res.json("Successful Login");
+                            return res.json({Status: "Success", role: user.role});
                     }else{
                         return res.json("Invalid Password");
                     }

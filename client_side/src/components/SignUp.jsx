@@ -1,7 +1,7 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 // import {Link, useNavigate} from 'react-router-dom';
 
 const SignUp = () => {
@@ -79,6 +79,7 @@ const SignUp = () => {
                         <p className="mt-2">Already have an account? <a href="/login">Login</a></p>
                         {/* <Link to="/login" className="btn btn-defaul bg-light border w-100">Login</Link> */}
                     </form>
+                    <Link to="/" className="btn btn-default bg-light">Homepage</Link>
                 </div>
             </div>
         </div>
