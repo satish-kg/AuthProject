@@ -1,22 +1,17 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import {Link, useNavigate} from 'react-router-dom';
 
-const SignUp = () => {
+const LogIn = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3001/register', {name, email, password})
         .then(res => {
                 alert("Created User");
                 alert(res.status);
-                navigate('/login');
         }).catch(err => {
             console.log(err);
             alert("Error: " + err);
@@ -75,13 +70,13 @@ const SignUp = () => {
                         <button type="submit" className="btn btn-success w-100 rounded-0">
                             Register
                         </button>
+                        <p className="mt-2">Already have an account? <a href="/login">Login</a></p>
+                        <button className="btn btn-primary w-100 rounded-0">Login</button>
                     </form>
-                    <p>Already have an account?</p>
-                    <Link to="/login" className="btn btn-defaul bg-light border w-100">Login</Link>
                 </div>
             </div>
         </div>
     )
 }
 
-export default SignUp;
+export default LogIn;
