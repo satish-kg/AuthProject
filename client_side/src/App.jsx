@@ -1,9 +1,10 @@
 // import { useState } from 'react'
-import './App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import SignUp from './components/SignUp'
-import LogIn from './components/LogIn'
-// import Hello from './components/Hello'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
+import SignUp from "./components/SignUp";
+import LogIn from "./components/LogIn";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignUp />}></Route>
+      <Route path="/" element={<SignUp />}></Route>
         <Route path="/register" element={<SignUp />}></Route>
         <Route path="/login" element={<LogIn />}></Route>
       </Routes>

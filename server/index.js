@@ -11,7 +11,8 @@
     app.use(cors());
     app.use(cookieParser());
 
-    mongoose.connect('mongodb://127.0.0.1:27017/mern_auth_db');
+    // mongoose.connect('mongodb://127.0.0.1:27017/mern_auth_db');
+    mongoose.connect('mongodb://localhost:27017/mern_auth_db');
     app.post('/register', (req, res) => {
         const {name, email, password} = req.body;
         bcrypt.hash(password, 10)
