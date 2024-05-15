@@ -15,6 +15,7 @@ const LogIn = () => {
         .then(res => {
                 alert("Logging-In");
                 alert(res.status);
+                alert(res.data);
                 console.log(res.data);
         }).catch(err => {
             console.log(err);
