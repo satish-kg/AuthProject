@@ -1,7 +1,8 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+// import {Link, useNavigate} from 'react-router-dom';
 
 const SignUp = () => {
     const [name, setName] = useState('');
@@ -75,8 +76,8 @@ const SignUp = () => {
                         <button type="submit" className="btn btn-success w-100 rounded-0">
                             Register
                         </button>
-                        <p>Already have an account?</p>
-                        <Link to="/login" className="btn btn-defaul bg-light border w-100">Login</Link>
+                        <p className="mt-2">Already have an account? <a href="/login">Login</a></p>
+                        {/* <Link to="/login" className="btn btn-defaul bg-light border w-100">Login</Link> */}
                     </form>
                 </div>
             </div>

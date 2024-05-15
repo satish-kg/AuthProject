@@ -1,7 +1,7 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 const LogIn = () => {
     // const [name, setName] = useState('');
@@ -72,7 +72,7 @@ const LogIn = () => {
                             Login
                         </button>
                         <p className="mt-2">Do not have an account? <a href="/register">Register</a></p>
-                        <Link to="/register" className="btn btn-defaul bg-light border w-100">Register</Link>
+                        {/* <Link to="/register" className="btn btn-defaul bg-light border w-100">Register</Link> */}
                     </form>
                 </div>
             </div>
